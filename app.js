@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const linksGenerator = require('./links-generator');
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
