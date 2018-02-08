@@ -3,6 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const linksGenerator = require('./links-generator');
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -16,4 +17,4 @@ app.get('/', (req, res) => res.send('Welcome to this app backend API! You probab
 
 app.get('/links', (req, res) => res.json(categoriesList));
 
-app.listen(3000, () => console.log('Server listening on port 3000...'));
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}...`));
