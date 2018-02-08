@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 
 const categoriesList = linksGenerator.generateLinks();
 
-app.get('/links', (req, res) => {
-  res.status(200).json(categoriesList);
-});
+app.get('/', (req, res) => res.send('Welcome to this app backend API! You probably should not be here.'));
+
+app.get('/links', (req, res) => res.json(categoriesList));
 
 app.listen(3000, () => console.log('Server listening on port 3000...'));
